@@ -30,16 +30,17 @@
          .lds-hourglass {
          display: inline-block;
          position: relative;
-         width: 300px;
-         height: 300px;
+         width: 160px;
+         height: 160px;
          }
          .lds-hourglass:after {
          content: " ";
          display: block;
-         width: 300px;
-         height: 300px;
+         width: 0;
+         height: 0;
          margin: 16px;
          border-radius: 50%;
+	 box-sizing: border-box;
          border: 26px solid #ff0;
          border-color: #ff0 transparent #ff0 transparent;
          animation: lds-hourglass 1.2s infinite;

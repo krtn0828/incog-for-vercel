@@ -27,35 +27,28 @@
              text-align: center;
              margin: 35px 0px 0px 0px;
          }
-         .lds-hourglass {
+         .lds-dual-ring {
          display: inline-block;
-         position: relative;
-         width: 300px;
-         height: 300px;
+         width: 160px;
+         height: 160px;
          }
-         .lds-hourglass:after {
+         .lds-dual-ring:after {
          content: " ";
          display: block;
-         width: 0;
-         height: 0;
-         margin: 0;
+         width: 128px;
+         height: 128px;
+         margin: 16px;
          border-radius: 50%;
-	 box-sizing: border-box;
-         border: 26px solid #ff0;
+         border: 12px solid #ff0;
          border-color: #ff0 transparent #ff0 transparent;
-         animation: lds-hourglass 1.2s infinite;
+         animation: lds-dual-ring 1.2s linear infinite;
          }
-         @keyframes lds-hourglass {
+         @keyframes lds-dual-ring {
          0% {
-             transform: rotate(0);
-             animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-         }
-         50% {
-             transform: rotate(900deg);
-             animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+             transform: rotate(0deg);
          }
          100% {
-             transform: rotate(1800deg);
+             transform: rotate(360deg);
          }
          }
      </style>

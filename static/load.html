@@ -23,32 +23,38 @@
          .info {
              font-weight:bold;
              color: #FF0;
-             max-width: 1000px;
+	         font-size:clamp(30px, 2.3vw, 600px);
              text-align: center;
              margin: 35px 0px 0px 0px;
          }
-         .lds-dual-ring {
+         .lds-hourglass {
          display: inline-block;
-         width: 160px;
-         height: 160px;
+         position: relative;
+         width: 300px;
+         height: 300px;
          }
-         .lds-dual-ring:after {
+         .lds-hourglass:after {
          content: " ";
          display: block;
-         width: 128px;
-         height: 128px;
+         width: 300px;
+         height: 300px;
          margin: 16px;
          border-radius: 50%;
-         border: 12px solid #ff0;
+         border: 26px solid #ff0;
          border-color: #ff0 transparent #ff0 transparent;
-         animation: lds-dual-ring 1.2s linear infinite;
+         animation: lds-hourglass 1.2s infinite;
          }
-         @keyframes lds-dual-ring {
+         @keyframes lds-hourglass {
          0% {
-             transform: rotate(0deg);
+             transform: rotate(0);
+             animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+         }
+         50% {
+             transform: rotate(900deg);
+             animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
          }
          100% {
-             transform: rotate(360deg);
+             transform: rotate(1800deg);
          }
          }
      </style>
@@ -59,7 +65,7 @@
 <body>
 
     <div class="msg">
-        <div class="lds-dual-ring"></div>
+        <div class="lds-hourglass"></div>
         <p class="info">
           You're now fucking around
           DO NOT touch iPad during class DO NOT tell others this suite
@@ -86,7 +92,7 @@
                 );
             });
         } else {
-            document.querySelector('.lds-dual-ring').remove();
+            document.querySelector('.lds-hourglass').remove();
             document.querySelector('.info').textContent = 'Your browser appears to be in private browsing mode or is not compatabile. Try swapping or updating your browser.'
         };
 
